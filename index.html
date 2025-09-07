@@ -5,34 +5,59 @@
   <title>Personal Website</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .header-row {
-      padding-top: 4rem;     
-      padding-bottom: 3rem;
-      align-items: center;
+    /* 全局链接样式 - 移除下划线 */
+    a {
+      text-decoration: none !important;
     }
-
-    .header-row img {
-      width: 160px !important;  
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .header-row .col-md-8 {
+    
+    /* 头部布局调整 */
+    .header-container {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    
+    /* 标签页样式调整 */
+    .nav-tabs {
       justify-content: center;
+      border-bottom: 1px solid #dee2e6;
+      margin-top: 1rem;
+    }
+    
+    .nav-tabs .nav-link {
+      border: none;
+      color: #495057;
+      padding: 0.5rem 1rem;
+    }
+    
+    .nav-tabs .nav-link.active {
+      color: #0d6efd;
+      background-color: transparent;
+      border-bottom: 2px solid #0d6efd;
+    }
+    
+    /* 内容区域样式 */
+    .tab-content {
+      padding: 1.5rem 0;
     }
   </style>
 </head>
 <body class="p-4">
 <div class="container">
 
-  <!-- personal info -->
-  <div class="row mb-4">
-    <div class="col-md-4">
-      <img src="img/placeholder.jpg" style="width:50%" class="rounded">
-    </div>
-    <div class="col-md-8">
+  <!-- 个人信息 - 修改为居中布局 -->
+  <div class="header-container mb-4">
+    <img src="img/placeholder.jpg" class="profile-img rounded">
+    <div>
       <h2>Your Name</h2>
       Your Position<br>
       <a href="#">Your Affiliation</a><br>
@@ -41,7 +66,7 @@
     </div>
   </div>
 
-  <!-- tags -->
+  <!-- 标签页 -->
   <ul class="nav nav-tabs" id="mainTab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="bio-tab" data-bs-toggle="tab" data-bs-target="#bio" type="button" role="tab">Bio & Awards</button>
@@ -57,7 +82,7 @@
     </li>
   </ul>
 
-  <!-- bio -->
+  <!-- 内容区域 -->
   <div class="tab-content mt-3" id="mainTabContent">
 
     <!-- Bio & Awards -->
